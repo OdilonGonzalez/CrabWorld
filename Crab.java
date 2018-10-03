@@ -8,10 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Crab extends Actor
 {
+    private int vida;
     /**
      * Act - do whatever the Crab wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public void act() 
     {
         // Add your action code here.
@@ -29,5 +31,13 @@ public class Crab extends Actor
             removeTouching(Worm.class);
             Greenfoot.playSound("eating.wav");
         }
+        if(isTouching(Lobster.class))
+        {
+            setLocation(250, 500);
+            //getWorld().showText("Perdiste una vida", 200, 200);
+            
+            getWorldOfType(CrabWorld.class).accedeLangosta().setLocation(250,500);
+        }
+        
     }  
 }
