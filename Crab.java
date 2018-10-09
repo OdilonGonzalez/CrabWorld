@@ -33,11 +33,15 @@ public class Crab extends Actor
         }
         if(isTouching(Lobster.class))
         {
+            Label perdiste;
             setLocation(250, 500);
             //getWorld().showText("Perdiste una vida", 200, 200);
             
             getWorldOfType(CrabWorld.class).accedeLangosta().setLocation(250,500);
         }
         
-    }  
+        
+    }
+    
+    
 }

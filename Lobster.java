@@ -32,6 +32,8 @@ public class Lobster extends Actor
         if(isTouching(Crab.class))
         {
             removeTouching(Crab.class);
+            CrabWorld myWorld = (CrabWorld)this.getWorld();
+            myWorld.restarVida();
         }
     }   
 }
