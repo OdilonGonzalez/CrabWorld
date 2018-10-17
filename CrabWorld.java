@@ -8,71 +8,68 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CrabWorld extends greenfoot.World
 {
-    private Crab crab;
-    private Lobster lobster;
-    private GreenfootSound musica;
-    private Counter vida;
-    private Tiempo tiempo;
+
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     public CrabWorld()
     {    
-
-        super(560, 560, 1);
-        crab = new Crab();
-        addObject(crab,260,232);
-        
-        tiempo = new Tiempo();
-        tiempo.addedToWorld(this);
-        
-        lobster = new Lobster();
-        addObject(lobster,100, 100);
-        
-        vida = new Counter("Vidas: ");
-        addObject(vida , 50, 45);
-        vida.setValue(3);
-        
-        musica = new GreenfootSound("ufo-t-balt.mp3");
-        
-        prepare(10);
-    }
-    
-    public void started()
-    {
-        //Greenfoot.playSound("ufo-balt.mp3");
-        musica.playLoop();
-    }
-    
-    public void stopped()
-    {
-        musica.stop();
-    }
-    
-    public Lobster accedeLangosta()
-    {
-        return lobster;
-    }
-    
-    public void restarVida()
-    {
-        vida.setValue(vida.getValue() -1);
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 400, 1); 
+        Tiempo tiempo = new Tiempo();
+        this.addObject(tiempo, 60, 20);
+        prepare();
     }
 
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare(int numWorm)
+    private void prepare()
     {
-        
-        for(int i = 0; i < numWorm; i++)
-        {
-            Worm worm = new Worm();
-            int x = Greenfoot.getRandomNumber(520);
-            int y = Greenfoot.getRandomNumber(520);
-            addObject(worm, x, y);
-        }
+        Crab crab = new Crab();
+        addObject(crab,88,85);
+        Lobster lobster = new Lobster();
+        addObject(lobster,410,82);
+        Worm worm = new Worm();
+        addObject(worm,119,300);
+        Worm worm2 = new Worm();
+        addObject(worm2,308,261);
+        Worm worm3 = new Worm();
+        addObject(worm3,361,285);
+        Worm worm4 = new Worm();
+        addObject(worm4,457,254);
+        Worm worm5 = new Worm();
+        addObject(worm5,287,194);
+        Worm worm6 = new Worm();
+        addObject(worm6,132,349);
+        Worm worm7 = new Worm();
+        addObject(worm7,520,346);
+        Worm worm8 = new Worm();
+        addObject(worm8,240,349);
+        Worm worm9 = new Worm();
+        addObject(worm9,522,176);
+        Worm worm10 = new Worm();
+        addObject(worm10,555,88);
+        Worm worm11 = new Worm();
+        addObject(worm11,575,43);
+        Worm worm12 = new Worm();
+        addObject(worm12,57,218);
+        Worm worm13 = new Worm();
+        addObject(worm13,160,256);
+        Worm worm14 = new Worm();
+        addObject(worm14,292,334);
+        Worm worm15 = new Worm();
+        addObject(worm15,376,340);
+        Worm worm16 = new Worm();
+        addObject(worm16,452,315);
+        Worm worm17 = new Worm();
+        addObject(worm17,439,347);
+        Worm worm18 = new Worm();
+        addObject(worm18,554,269);
+        worm5.setLocation(302,193);
+        Tiempo tiempo = new Tiempo();
+        addObject(tiempo,29,15);
     }
 }

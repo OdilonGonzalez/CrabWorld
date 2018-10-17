@@ -10,30 +10,22 @@ public class Lobster extends Actor
 {
     private int pasos;
     
-  public Lobster()
-  {
+    public Lobster()
+    {
         pasos = 0;
-  }
-   
-    /**
-     * Act - do whatever the Lobster wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    }
     public void act() 
     {
-        // Add your action code here.
         move(5);
-        pasos ++;
+        pasos++;
         if(pasos == 5)
         {
-            turn(Greenfoot.getRandomNumber(90));
+            turn(Greenfoot.getRandomNumber(180) - 90);
             pasos = 0;
         }
-        if(isTouching(Crab.class))
+        /*if(isTouching(Crab.class))
         {
             removeTouching(Crab.class);
-            CrabWorld myWorld = (CrabWorld)this.getWorld();
-            myWorld.restarVida();
-        }
-    }   
+        }*/
+    }    
 }
